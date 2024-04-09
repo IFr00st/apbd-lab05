@@ -1,4 +1,7 @@
-﻿namespace lab05.Endpoints;
+﻿using lab05.Database;
+using lab05.Models;
+
+namespace lab05.Endpoints;
 
 public static class AnimalEndpoints
 {
@@ -17,11 +20,13 @@ public static class AnimalEndpoints
             // 404 - Not Found
             // 403 - Forbidden
             // 401 - Unauthorized
-            return Results.Ok(); 
+            var animals = StaticData.Animals;
+            
+            return Results.Ok(animals); 
         });
-        app.MapPost("/animals", () =>
+        app.MapPost("/animals", (Animal animal) =>
         {
-
+            return Results.Created("", animal);
         });
     }
 }
