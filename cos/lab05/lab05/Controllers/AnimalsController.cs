@@ -29,4 +29,10 @@ public class AnimalsController : ControllerBase
         return Ok();
     }
 
+    [HttpPut("{id}")]
+    public IActionResult EditAnimals(int id)
+    {
+        return Ok();
+    }
+
 }
