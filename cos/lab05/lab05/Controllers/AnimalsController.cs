@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using lab05.Database;
+using lab05.Models;
+
 namespace lab05.Controllers;
 [ApiController]
 [Route("/animals-controller")]
@@ -21,8 +23,9 @@ public class AnimalsController : ControllerBase
 
     
     [HttpPost]
-    public IActionResult AddAnimals()
+    public IActionResult AddAnimals(int id, String name, String category, double weight, String color)
     {
+        StaticData.Animals.Add(new Animal(id, name, category, weight, color));
         return Ok();
     }
 
