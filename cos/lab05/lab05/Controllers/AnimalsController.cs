@@ -26,7 +26,7 @@ public class AnimalsController : ControllerBase
     public IActionResult AddAnimals(int id, String name, String category, double weight, String color)
     {
         StaticData.Animals.Add(new Animal(id, name, category, weight, color));
-        return Ok();
+        return Ok("U added new animal !! d-_-b");
     }
 
     [HttpPut]
