@@ -25,4 +25,16 @@ public class StaticData
         return null;
     }
     
+    public static void removeByid(int id)
+    {
+        foreach (var animal in Animals)
+        {
+            if (animal.id == id)
+            {
+                StaticData.Animals.Remove(animal);
+            }
+        }
+        
+    }
+    
 }

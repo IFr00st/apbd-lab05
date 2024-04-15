@@ -29,10 +29,22 @@ public class AnimalsController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}")]
-    public IActionResult EditAnimals(int id)
+    [HttpPut]
+    public IActionResult EditAnimals(int id, String name, String category, double weight, String color)
     {
+        StaticData.findByid(id).category = category;
+        StaticData.findByid(id).name = name;
+        StaticData.findByid(id).weight = weight;
+        StaticData.findByid(id).color = color;
         return Ok();
+    }
+    
+
+    [HttpDelete]
+    public IActionResult DeleteAnimal(int id)
+    {
+        StaticData.removeByid(id);
+        return Ok("U deleted an animal ! d-_-b");
     }
 
 }
