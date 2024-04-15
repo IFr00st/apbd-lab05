@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using lab05.Database;
 namespace lab05.Controllers;
 [ApiController]
 [Route("/animals-controller")]
@@ -9,14 +9,14 @@ public class AnimalsController : ControllerBase
     [HttpGet]
     public IActionResult GetAnimals()
     {
-        return Ok();
+        return Ok(StaticData.Animals);
     }
     
     
     [HttpGet("{id}")]
     public IActionResult GetAnimals(int id)
     {
-        return Ok(id);
+        return Ok(StaticData.findByid(id));
     }
 
     
