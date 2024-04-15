@@ -43,5 +43,24 @@ public class StaticData
         }
         
     }
+
+    public static List<Visit> getVisitsById(int id)
+    {
+        List<Visit> tmp = new List<Visit>();
+        foreach (var visit  in Visits)
+        {
+            if (visit.animal.id == id)
+            {
+                tmp.Add(visit);
+            }
+        }
+
+        return tmp;
+    }
+
+    public static void addNewVisit(String date, Animal animal, String brief, double cost)
+    {
+        Visits.Add(new Visit(date,animal,brief,cost));
+    }
     
 }
