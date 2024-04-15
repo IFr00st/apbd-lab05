@@ -12,6 +12,13 @@ public class StaticData
         new Animal(4, "", "", 0, ""),
     };
 
+    public static List<Visit> Visits = new List<Visit>()
+    {
+        new Visit("2000", findByid(1), "", 0),
+        new Visit("2001", findByid(1), "", 0),
+        new Visit("2002", findByid(2), "", 0)
+    };
+
     public static Animal findByid(int id)
     {
         foreach (var animal in Animals)
